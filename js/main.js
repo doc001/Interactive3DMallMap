@@ -60,6 +60,7 @@
 		selectedLevel,
 		// navigation element wrapper
 		mallNav = document.querySelector('.mallnav'),
+		mallHeader = document.querySelector('.codrops-header'),
 		// show all mall´s levels ctrl
 		allLevelsCtrl = mallNav.querySelector('.mallnav__button--all-levels'),
 		// levels navigation up/down ctrls
@@ -293,6 +294,7 @@
 	 */
 	function showMallNav() {
 		classie.remove(mallNav, 'mallnav--hidden');
+		classie.add(mallHeader, 'mallheader--hidden')
 	}
 
 	/**
@@ -300,6 +302,7 @@
 	 */
 	function hideMallNav() {
 		classie.add(mallNav, 'mallnav--hidden');
+		classie.remove(mallHeader, 'mallheader--hidden');
 	}
 
 	/**
