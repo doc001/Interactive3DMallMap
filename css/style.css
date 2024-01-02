@@ -9,7 +9,6 @@
 *,
 *::after,
 *::before {
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -27,7 +26,6 @@ body {
 	font-family: 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color: #515158;
 	background: #f0f0f0;
-	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
@@ -78,9 +76,8 @@ button:focus {
 	z-index: 100;
 	top: 0;
 	left: 0;
-	display: -webkit-flex;
+	display
 	display: flex;
-	-webkit-align-items: center;
 	align-items: center;
 	padding: 1.5em 1em;
 	text-align: center;
@@ -94,59 +91,6 @@ button:focus {
 }
 
 /* Top Navigation Style */
-
-.codrops-links {
-	position: relative;
-	display: inline-block;
-	text-align: center;
-	white-space: nowrap;
-}
-
-.codrops-links::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 1px;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.1);
-	-webkit-transform: rotate3d(0, 0, 1, 22.5deg);
-	transform: rotate3d(0, 0, 1, 22.5deg);
-}
-
-.codrops-icon {
-	display: inline-block;
-	width: 1.5em;
-	margin: 0.5em;
-	padding: 0em 0;
-	text-decoration: none;
-}
-
-.codrops-icon span {
-	display: none;
-}
-
-.codrops-icon::before {
-	font-family: 'codropsicons';
-	font-weight: normal;
-	font-style: normal;
-	font-variant: normal;
-	line-height: 1;
-	margin: 0 5px;
-	text-transform: none;
-	speak: none;
-	-webkit-font-smoothing: antialiased;
-}
-
-.codrops-icon--drop::before {
-	content: '\e001';
-	color: #09c;
-}
-
-.codrops-icon--prev::before {
-	content: '\e004';
-}
-
 .main {
 	position: fixed;
 	top: 0;
@@ -161,13 +105,9 @@ button:focus {
 	width: 100%;
 	height: 100%;
 	pointer-events: none;
-	-webkit-perspective: 3500px;
-	perspective: 3500px;
-	-webkit-perspective-origin: 0% 50%;
-	perspective-origin: 0% 50%;
-	-webkit-transition: -webkit-transform 0.8s;
+	perspective: 1500px;
+	perspective-origin: 0% 25%;
 	transition: transform 0.8s;
-	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
@@ -179,7 +119,7 @@ button:focus {
 .surroundings,
 .levels {
 	position: absolute;
-	top: 50%;
+	top: 40%;
 	left: 50%;
 }
 
@@ -189,9 +129,7 @@ button:focus {
 	height: 128vmin;
 	margin: -64vmin 0 0 -96vmin;
 	pointer-events: none;
-	-webkit-transition: opacity 0.8s;
 	transition: opacity 0.8s;
-	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
@@ -206,19 +144,17 @@ button:focus {
 }
 
 .levels {
-	width: 96vmin;
+	width: 89vmin;
 	height: 64vmin;
-	margin: -32vmin 0 0 -48vmin;
-	-webkit-transition: -webkit-transform 0.3s;
+	margin: -32vmin 0 0 -43vmin;
 	transition: transform 0.3s;
-	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
 .surroundings,
 .levels {
-	-webkit-transform: rotateX(70deg) rotateZ(-45deg) translateZ(-15vmin);
-	transform: rotateX(70deg) rotateZ(-45deg) translateZ(-15vmin);
+	/* transform: rotateX(70deg) rotateZ(-45deg) translateZ(-15vmin); */
+	transform: rotateX(65deg) rotateZ(-40deg) translateZ(0);
 }
 
 .level {
@@ -227,16 +163,13 @@ button:focus {
 	height: 100%;
 	cursor: pointer;
 	pointer-events: auto;
-	-webkit-transition: opacity 1s, -webkit-transform 1s;
 	transition: opacity 1s, transform 1s;
-	-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
 .level::after {
-	font-size: 2.5vmin;
+	font-size: 3.5vmin;
 	line-height: 0;
 	position: absolute;
 	z-index: 100;
@@ -244,11 +177,12 @@ button:focus {
 	left: 3.5em;
 	white-space: nowrap;
 	color: #7d7d86;
-	-webkit-transform: rotateZ(45deg) rotateX(-70deg) translateZ(5vmin);
-	transform: rotateZ(45deg) rotateX(-70deg) translateZ(5vmin);
-	-webkit-transition: -webkit-transform 1s, color 0.3s;
+	/* transform: rotateZ(45deg) rotateX(-70deg) translateZ(5vmin);
 	transition: transform 1s, color 0.3s;
-	-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); */
+
+	transform: rotateX(0) rotateZ(0) translateZ(0);
+	transition: transform 1s, color 0.3s;
 	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
 
@@ -258,8 +192,8 @@ button:focus {
 }
 
 .level--current::after {
-	-webkit-transform: rotateZ(-20deg) rotateZ(45deg) rotateX(-70deg) translateZ(5vmin) translateX(5vmin) translateY(-10vmin);
-	transform: rotateZ(-20deg) rotateZ(45deg) rotateX(-70deg) translateZ(5vmin) translateX(5vmin) translateY(-10vmin);
+	/* transform: rotateZ(-20deg) rotateZ(45deg) rotateX(-70deg) translateZ(5vmin) translateX(5vmin) translateY(-10vmin); */
+	transform: rotateY(0) rotateZ(20deg) rotateX(-70deg) translateZ(0) translateX(0) translateY(0);
 }
 
 .level--1::after {
@@ -270,13 +204,13 @@ button:focus {
 	content: 'L2';
 }
 
-.level--3::after {
+/* .level--3::after {
 	content: 'L3';
 }
 
 .level--4::after {
 	content: 'L4';
-}
+} */
 
 .level:not(:first-child) {
 	position: absolute;
@@ -285,19 +219,16 @@ button:focus {
 }
 
 .level--2 {
-	-webkit-transform: translateZ(10vmin);
-	transform: translateZ(10vmin);
+	transform: translateZ(20vmin);
 }
 
-.level--3 {
-	-webkit-transform: translateZ(20vmin);
+/* .level--3 {
 	transform: translateZ(20vmin);
 }
 
 .level--4 {
-	-webkit-transform: translateZ(30vmin);
 	transform: translateZ(30vmin);
-}
+} */
 
 
 /* Selection transitions */
@@ -323,7 +254,6 @@ button:focus {
 .levels--selected-3 .level--2,
 .levels--selected-4 .level--2,
 .levels--selected-4 .level--3 {
-	-webkit-transform: translateZ(-60vmin);
 	transform: translateZ(-60vmin);
 }
 
@@ -334,7 +264,6 @@ button:focus {
 .levels--selected-2 .level--3,
 .levels--selected-3 .level--2,
 .levels--selected-4 .level--2 {
-	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
 }
 
@@ -344,7 +273,6 @@ button:focus {
 .levels--selected-3 .level--current,
 .levels--selected-3 .level--current::after,
 .levels--selected-4 .level--3 {
-	-webkit-transition-delay: 0.25s;
 	transition-delay: 0.25s;
 }
 
@@ -352,7 +280,6 @@ button:focus {
 .levels--selected-1 .level--current::after,
 .levels--selected-4 .level--current,
 .levels--selected-4 .level--current::after {
-	-webkit-transition-delay: 0.45s;
 	transition-delay: 0.45s;
 }
 
@@ -367,9 +294,7 @@ button:focus {
 /* Navigation classes */
 .levels--open .level,
 .levels--open .level::after {
-	-webkit-transition: -webkit-transform 1s, opacity 1s;
 	transition: transform 1s, opacity 1s;
-	-webkit-transition-delay: 0s;
 	transition-delay: 0s;
 }
 
@@ -383,12 +308,10 @@ button:focus {
 }
 
 .levels--open .level.level--moveOutUp {
-	-webkit-transform: translateZ(90vmin);
 	transform: translateZ(90vmin);
 }
 
 .levels--open .level.level--moveOutDown {
-	-webkit-transform: translateZ(-60vmin);
 	transform: translateZ(-60vmin);
 }
 
@@ -397,13 +320,17 @@ button:focus {
 .mallnav {
 	position: absolute;
 	top: 0;
-	right: 0;
+	left: 0;
 	text-align: center;
-	-webkit-transition: opacity 0.8s;
 	transition: opacity 0.8s;
 }
 
 .mallnav--hidden {
+	pointer-events: none;
+	opacity: 0;
+}
+
+.mallheader--hidden {
 	pointer-events: none;
 	opacity: 0;
 }
@@ -460,7 +387,6 @@ button:focus {
 } */
 
 .map__outline {
-	-webkit-transition: fill 0.3s;
 	transition: fill 0.3s;
 	fill: #031A62;
 }
@@ -479,7 +405,6 @@ button:focus {
 }
 
 .map__space {
-	-webkit-transition: fill-opacity 0.8s;
 	transition: fill-opacity 0.8s;
 	fill: #bdbdbd;
 	fill-opacity: 0.6;
@@ -509,14 +434,11 @@ button:focus {
 	padding: 3em;
 	text-align: center;
 	background: #d7d7dc;
-	-webkit-transition: -webkit-transform 0.8s;
 	transition: transform 0.8s;
-	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .content--open .content__item {
-	-webkit-transition: none;
 	transition: none;
 }
 
@@ -554,7 +476,6 @@ button:focus {
 
 .content__item--hover .content__item-title {
 	opacity: 1;
-	-webkit-transition: opacity 0.3s;
 	transition: opacity 0.3s;
 }
 
@@ -583,7 +504,7 @@ button:focus {
 .content__meta-item {
 	display: inline-block;
 	padding: 0 0.25em;
-	color: ;
+	color: black;
 }
 
 .content__meta .icon {
@@ -600,14 +521,12 @@ button:focus {
 	position: absolute;
 	top: -100%;
 	right: 0;
-	-webkit-transition: opacity 0.3s 0.7s;
 	transition: opacity 0.3s 0.7s;
 }
 
 .content__button--hidden {
 	pointer-events: none;
 	opacity: 0;
-	-webkit-transition: none;
 	transition: none;
 }
 
@@ -771,7 +690,6 @@ button:focus {
 	width: 100%;
 	height: 100%;
 	pointer-events: none;
-	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
@@ -787,9 +705,7 @@ button:focus {
 	/* let the bottom tip be the reference point for individual coordinates */
 	-webkit-transform: rotateZ(-20deg) rotateZ(45deg) rotateX(-70deg);
 	transform: rotateZ(-20deg) rotateZ(45deg) rotateX(-70deg);
-	-webkit-transform-origin: 50% 100%;
 	transform-origin: 50% 100%;
-	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
@@ -814,42 +730,34 @@ button:focus {
 }
 
 .pin:nth-child(2) .pin__icon {
-	-webkit-transition-delay: 0.05s;
 	transition-delay: 0.05s;
 }
 
 .pin:nth-child(3) .pin__icon {
-	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
 }
 
 .pin:nth-child(4) .pin__icon {
-	-webkit-transition-delay: 0.15s;
 	transition-delay: 0.15s;
 }
 
 .pin:nth-child(5) .pin__icon {
-	-webkit-transition-delay: 0.2s;
 	transition-delay: 0.2s;
 }
 
 .pin:nth-child(6) .pin__icon {
-	-webkit-transition-delay: 0.25s;
 	transition-delay: 0.25s;
 }
 
 .pin:nth-child(7) .pin__icon {
-	-webkit-transition-delay: 0.3s;
 	transition-delay: 0.3s;
 }
 
 .pin:nth-child(8) .pin__icon {
-	-webkit-transition-delay: 0.35s;
 	transition-delay: 0.35s;
 }
 
 .pin:nth-child(9) .pin__icon {
-	-webkit-transition-delay: 0.4s;
 	transition-delay: 0.4s;
 }
 
@@ -887,7 +795,6 @@ button:focus {
 	height: 50%;
 	fill: white;
 	fill-opacity: 0.6;
-	-webkit-transition: fill-opacity 0.3s;
 	transition: fill-opacity 0.3s;
 }
 
@@ -1089,7 +996,7 @@ screen and (max-height: 40.625em) {
 	}
 
 	.mallnav {
-		top: 4em;
+		top: 0;
 	}
 
 	.container {
@@ -1107,5 +1014,18 @@ screen and (max-height: 40.625em) {
 	.codrops-header {
 		padding-right: 4em;
 		text-align: left;
+	}
+
+	/*
+	* Levels
+	*/
+	.level--2 {
+		transform: translateZ(30vmin);
+	}
+
+
+	/* Content */
+	.content {
+		height: 60%;
 	}
 }
