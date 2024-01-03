@@ -105,7 +105,7 @@ button:focus {
 	width: 100%;
 	height: 100%;
 	pointer-events: none;
-	perspective: 1500px;
+	perspective: 3500px;
 	perspective-origin: 0% 25%;
 	transition: transform 0.8s;
 	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
@@ -118,7 +118,7 @@ button:focus {
 .surroundings,
 .levels {
 	position: absolute;
-	top: 40%;
+	top: 50%;
 	left: 50%;
 }
 
@@ -203,11 +203,11 @@ button:focus {
 	content: 'L2';
 }
 
-/* .level--3::after {
+.level--3::after {
 	content: 'L3';
 }
 
-.level--4::after {
+/* .level--4::after {
 	content: 'L4';
 } */
 
@@ -221,11 +221,11 @@ button:focus {
 	transform: translateZ(20vmin);
 }
 
-/* .level--3 {
-	transform: translateZ(20vmin);
+.level--3 {
+	transform: translateZ(40vmin);
 }
 
-.level--4 {
+/* .level--4 {
 	transform: translateZ(30vmin);
 } */
 
@@ -285,7 +285,8 @@ button:focus {
 
 .level.level--current {
 	/* go to center */
-	transform: translateZ(0) rotate3d(0,0,1,20deg);
+	transform: translateZ(27vmin) rotate3d(0,0,1,20deg);
+	/* transform: rotateX(62deg) rotateZ(-43deg) translateZ() */
 }
 
 /* Navigation classes */
@@ -367,13 +368,16 @@ button:focus {
 
 /* Level map */
 
-.map__ground {
+/* .map__ground {
 	fill: #d7d7dc;
-}
+} */
 
-.map__outline {
+.map__ground{fill:#e6e8ef;}
+
+
+.map__outline{
 	transition: fill 0.3s;
-	fill: #777777;
+	fill:#031A62;
 }
 
 .level:hover .map__outline,
@@ -836,6 +840,18 @@ button:focus {
 		right: 0;
 		z-index: 1000;
 	}
+
+	.mall {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		perspective: 1500px;
+		perspective-origin: 0% 25%;
+		transition: transform 0.8s;
+		transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	}
+
 	.mallnav {
 		top: 0;
 	}
@@ -865,10 +881,28 @@ button:focus {
 	/*
 	* Levels
 	*/
-	.level--2 {
-		transform: translateZ(30vmin);
+
+	.surroundings,
+	.levels {
+	/* transform: rotateX(70deg) rotateZ(-45deg) translateZ(-15vmin); */
+	transform: rotateX(58deg) rotateZ(-37deg) translateZ(0);
+}
+
+	.levels {
+		width: 89vmin;
+		height: 64vmin;
+		margin: -32vmin 0 0 -46vmin;
+		transition: transform 0.3s;
+		transform-style: preserve-3d;
 	}
 
+	.level--2 {
+		transform: translateZ(20vmin);
+	}
+
+	.level--3 {
+		transform: translateZ(40vmin);
+	}
 
 	/* Content */
 	.content {
