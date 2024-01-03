@@ -76,7 +76,6 @@ button:focus {
 	z-index: 100;
 	top: 0;
 	left: 0;
-	display
 	display: flex;
 	align-items: center;
 	padding: 1.5em 1em;
