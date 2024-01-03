@@ -836,6 +836,11 @@ button:focus {
 		right: 0;
 		z-index: 1000;
 	}
+
+	.mall {
+		perspective: 3500px;
+	}
+
 	.mallnav {
 		top: 0;
 	}
