@@ -288,12 +288,8 @@ button:focus {
 .level.level--current {
 	-webkit-transform: translateZ(15vmin) rotate3d(0, 0, 1, 20deg);
 	/* go to center */
-<<<<<<< HEAD
 	transform: translateZ(27vmin) rotate3d(0,0,1,20deg);
 	/* transform: rotateX(62deg) rotateZ(-43deg) translateZ() */
-=======
-	transform: translateZ(15vmin) rotate3d(0, 0, 1, 20deg);
->>>>>>> f261edd786bf2f9d16086253a41f71d6072a8a10
 }
 
 /* Navigation classes */
@@ -375,38 +371,16 @@ button:focus {
 
 /* Level map */
 
-<<<<<<< HEAD
 /* .map__ground {
 	fill: #d7d7dc;
 } */
 
 .map__ground{fill:#e6e8ef;}
-=======
-/*
-* Color for BVC
-*/
-
-.map__outline{fill:#031A62;}
-.blue{fill:#00A3FF;}
-.library{opacity:0.5;fill:#9AA3C0;}
-.n124_theatre{opacity:0.5;fill:#FFE5EB;}
-.black{fill:#000000;}
-.map__ground{fill:#e9e9e9;}
-
-
-/* .map__ground {
-	fill: #d7d7dc;
-} */
->>>>>>> f261edd786bf2f9d16086253a41f71d6072a8a10
 
 
 .map__outline{
 	transition: fill 0.3s;
-<<<<<<< HEAD
 	fill:#031A62;
-=======
-	fill: #031A62;
->>>>>>> f261edd786bf2f9d16086253a41f71d6072a8a10
 }
 
 .level:hover .map__outline,
@@ -1013,7 +987,6 @@ screen and (max-height: 40.625em) {
 		z-index: 1000;
 	}
 
-<<<<<<< HEAD
 	.mall {
 		position: relative;
 		width: 100%;
@@ -1025,8 +998,6 @@ screen and (max-height: 40.625em) {
 		transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 	}
 
-=======
->>>>>>> f261edd786bf2f9d16086253a41f71d6072a8a10
 	.mallnav {
 		top: 0;
 	}
